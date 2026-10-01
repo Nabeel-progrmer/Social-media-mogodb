@@ -34,13 +34,14 @@ import {
 } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import { baseUrl } from "../core";
 import { store } from "../store/states";
 import "../App.css";
 
 const { Content } = Layout;
 const { TextArea } = Input;
 const { Paragraph, Title, Text } = Typography;
-const API_URL = "http://localhost:5002/api/v1";
+const API_URL = `${baseUrl}/api/v1`;
 const authHeaders = () => ({
   Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
 });
