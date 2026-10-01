@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
 import axios from "axios";
-const Post = lazy(() => import("./pages/Post"));
+const Post = lazy(() => import("./pages/post.jsx"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const VerifyEmail = lazy(() => import("./pages/VerifyEmail"));
