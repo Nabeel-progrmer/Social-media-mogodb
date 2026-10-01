@@ -1699,13 +1699,22 @@
   line-height: 1.55;
   resize: vertical;
 }
-.profile-bio-form .ant-input-data-count {
-  padding: 2px 3px 0;
+.profile-bio-form-footer {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.profile-bio-count {
+  flex: 0 0 auto;
+  padding-inline: 2px;
   color: #77837e;
   font-size: 11px;
+  font-variant-numeric: tabular-nums;
 }
 .profile-bio-form .ant-btn {
-  justify-self: end;
+  flex: 0 0 auto;
   min-height: 40px;
   padding-inline: 17px;
   font-weight: 650;
@@ -2156,8 +2165,7 @@
     padding: 13px;
   }
   .profile-bio-form .ant-btn {
-    width: 100%;
-    justify-self: stretch;
+    width: auto;
   }
   .profile-edit-button {
     right: 18px;
@@ -3209,7 +3217,7 @@ html[data-theme="dark"] .profile-bio {
   background: #202e28;
 }
 
-html[data-theme="dark"] .profile-bio-form .ant-input-data-count {
+html[data-theme="dark"] .profile-bio-count {
   color: var(--circle-muted);
 }
 

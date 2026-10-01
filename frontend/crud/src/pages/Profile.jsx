@@ -520,19 +520,23 @@ const Profile = () => {
                             aria-label="Your bio"
                             value={bioDraft}
                             maxLength={160}
-                            showCount
                             autoSize={{ minRows: 2, maxRows: 4 }}
                             onChange={(event) => setBioDraft(event.target.value)}
                             placeholder="Write a short introduction"
                           />
-                          <Button
-                            type="primary"
-                            htmlType="submit"
-                            loading={isSavingBio}
-                            disabled={bioDraft.trim() === (profile.bio || "")}
-                          >
-                            Save bio
-                          </Button>
+                          <div className="profile-bio-form-footer">
+                            <Text className="profile-bio-count" aria-live="polite">
+                              {bioDraft.length}/160
+                            </Text>
+                            <Button
+                              type="primary"
+                              htmlType="submit"
+                              loading={isSavingBio}
+                              disabled={bioDraft.trim() === (profile.bio || "")}
+                            >
+                              Save bio
+                            </Button>
+                          </div>
                         </form>
                       ) : (
                         <Paragraph className="profile-bio-copy">
