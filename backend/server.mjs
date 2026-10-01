@@ -38,8 +38,18 @@ app.get("/verify-email", (req, res, next) => {
     .catch(next);
 });
 
+const requireDatabase = async (_req, res, next) => {
+  try {
+    await connect_database();
+    return next();
+  } catch {
+    return res.status(503).send({ message: "database unavailable" });
+  }
+};
+
 app.use(
   "/api/v1",
+  requireDatabase,
   authRoutes,
   authGuardJWT,
   postRoutes,
@@ -56,5 +66,5 @@ attachChatSockets(io);
 
 httpServer.listen(PORT, () => {
   console.log("server is ok 200");
-  connect_database();
+  connect_database().catch(() => {});
 });
