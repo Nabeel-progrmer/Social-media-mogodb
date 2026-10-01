@@ -1665,11 +1665,16 @@
 .profile-bio {
   display: grid;
   width: 100%;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #e5e9e2;
+  border-radius: 14px;
+  background: #f8f9f6;
   text-align: left;
 }
 .profile-bio-label {
+  display: block;
   color: #d56745;
   font-size: 10px;
   font-weight: 700;
@@ -1677,13 +1682,44 @@
 }
 .profile-bio-form {
   display: grid;
-  gap: 9px;
+  gap: 11px;
+  width: 100%;
+}
+.profile-bio-form .ant-input-textarea,
+.profile-bio-form .ant-input-textarea-affix-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+.profile-bio-form textarea.ant-input {
+  min-height: 76px;
+  padding: 12px 13px;
+  border-color: #dfe5dc;
+  background: #fffefa;
+  font-size: 14px;
+  line-height: 1.55;
+  resize: vertical;
+}
+.profile-bio-form .ant-input-data-count {
+  padding: 2px 3px 0;
+  color: #77837e;
+  font-size: 11px;
 }
 .profile-bio-form .ant-btn {
   justify-self: end;
+  min-height: 40px;
+  padding-inline: 17px;
+  font-weight: 650;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.profile-bio-form .ant-btn:not(:disabled):hover {
+  transform: translateY(-1px);
 }
 .profile-bio-copy {
   margin: 0;
+  padding: 12px 13px;
+  border: 1px solid #e5e9e2;
+  border-radius: 10px;
+  background: #fffefa;
   color: #53625e;
   line-height: 1.65;
   overflow-wrap: anywhere;
@@ -2113,6 +2149,15 @@
   .profile-summary-body {
     padding-left: 18px;
     padding-right: 18px;
+  }
+  .profile-bio {
+    gap: 9px;
+    margin-top: 18px;
+    padding: 13px;
+  }
+  .profile-bio-form .ant-btn {
+    width: 100%;
+    justify-self: stretch;
   }
   .profile-edit-button {
     right: 18px;
@@ -3154,7 +3199,28 @@ html[data-theme="dark"] .people-avatar {
 }
 
 html[data-theme="dark"] .profile-bio-copy {
+  border-color: var(--circle-line);
+  background: #17231e;
   color: var(--circle-ink-soft);
+}
+
+html[data-theme="dark"] .profile-bio {
+  border-color: var(--circle-line);
+  background: #202e28;
+}
+
+html[data-theme="dark"] .profile-bio-form .ant-input-data-count {
+  color: var(--circle-muted);
+}
+
+@media (max-width: 400px) {
+  .profile-bio {
+    padding: 11px;
+  }
+  .profile-bio-form textarea.ant-input {
+    padding: 10px 11px;
+    font-size: 13px;
+  }
 }
 
 /* Narrow viewports, touch layouts, and short landscape screens */
