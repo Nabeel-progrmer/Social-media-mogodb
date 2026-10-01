@@ -1,0 +1,280 @@
+.settings-page {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: clamp(30px, 6vw, 66px) 24px 80px;
+  animation: page-arrive 400ms ease both;
+}
+
+.settings-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.settings-heading-icon,
+.settings-section-icon,
+.settings-choice-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #fff0e8, #f6ddd1);
+  color: #bd5a3c;
+}
+
+.settings-heading-icon {
+  width: 54px;
+  height: 54px;
+  font-size: 23px;
+}
+
+.settings-eyebrow {
+  color: #bd5a3c;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.settings-heading h1 {
+  margin: 3px 0 5px;
+  color: var(--circle-ink, #173b35);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 6vw, 48px);
+  letter-spacing: -1px;
+}
+
+.settings-heading p,
+.settings-section-heading p {
+  margin: 0;
+  color: var(--circle-muted, #718079);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.settings-section {
+  margin-top: 18px;
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid var(--circle-line, #e5e9e2);
+  border-radius: 19px;
+  background: var(--circle-paper, #fffefa);
+  box-shadow: 0 12px 34px rgba(23, 59, 53, 0.055);
+}
+
+.settings-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.settings-section-heading > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-section-icon {
+  width: 42px;
+  height: 42px;
+  font-size: 17px;
+}
+
+.settings-section-icon.appearance-icon {
+  background: linear-gradient(145deg, #fff4d7, #f9e7b7);
+  color: #a06a1f;
+}
+
+.settings-section-heading h2 {
+  margin: 0 0 3px;
+  color: var(--circle-ink, #173b35);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+}
+
+.settings-choice-grid,
+.theme-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.settings-choice {
+  display: flex;
+  min-width: 0;
+  min-height: 112px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 17px 14px;
+  border: 1px solid var(--circle-line, #e5e9e2);
+  border-radius: 14px;
+  background: var(--circle-paper, #fffefa);
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 170ms ease, background 170ms ease, transform 170ms ease, box-shadow 170ms ease;
+}
+
+.settings-choice:hover:not(:disabled),
+.theme-choice:hover {
+  transform: translateY(-2px);
+  border-color: #dfb6a7;
+  box-shadow: 0 8px 20px rgba(23, 59, 53, 0.07);
+}
+
+.settings-choice.is-selected,
+.theme-choice.is-selected {
+  border-color: #d99175;
+  background: #fff8f4;
+  box-shadow: 0 0 0 3px rgba(213, 103, 69, 0.08);
+}
+
+.settings-choice:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.settings-choice-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+}
+
+.settings-choice-copy {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+}
+
+.settings-choice-copy strong,
+.theme-choice strong {
+  color: var(--circle-ink, #173b35);
+  font-size: 14px;
+}
+
+.settings-choice-copy small,
+.theme-choice small {
+  color: var(--circle-muted, #718079);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.settings-selected-icon {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: #bc5b3d;
+  font-size: 17px;
+  animation: settings-pop 200ms ease both;
+}
+
+.settings-note {
+  margin-top: 14px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  background: #f5f7f2;
+  color: var(--circle-muted, #718079);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.theme-choice {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  border: 1px solid var(--circle-line, #e5e9e2);
+  border-radius: 14px;
+  background: var(--circle-paper, #fffefa);
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 170ms ease, background 170ms ease, transform 170ms ease, box-shadow 170ms ease;
+}
+
+.theme-choice > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+}
+
+.theme-preview {
+  position: relative;
+  display: flex;
+  height: 78px;
+  align-items: flex-end;
+  gap: 4px;
+  overflow: hidden;
+  padding: 9px;
+  border: 1px solid #deded5;
+  border-radius: 10px;
+}
+
+.light-theme-preview { background: #f4f3ed; }
+.dark-theme-preview { background: #14201c; border-color: #33463e; }
+
+.theme-preview i {
+  display: block;
+  width: 21%;
+  height: 48%;
+  border: 1px solid rgba(30, 66, 55, 0.08);
+  border-radius: 4px 4px 2px 2px;
+  background: #fffefa;
+}
+
+.theme-preview i:nth-child(2) { height: 70%; }
+.theme-preview i:nth-child(3) { height: 58%; }
+.dark-theme-preview i { border-color: #34483f; background: #26362f; }
+
+.theme-preview b {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  color: #c77a39;
+  font-size: 15px;
+}
+
+.dark-theme-preview b { color: #e9c775; }
+
+.settings-loading {
+  display: grid;
+  min-height: 110px;
+  place-items: center;
+}
+
+.settings-error { margin-bottom: 16px; }
+
+.settings-footer {
+  padding: 17px 5px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@keyframes settings-pop {
+  from { opacity: 0; transform: scale(0.75); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .settings-page { padding: 28px 15px 52px; }
+  .settings-heading { gap: 13px; margin-bottom: 23px; }
+  .settings-heading-icon { width: 46px; height: 46px; border-radius: 13px; }
+  .settings-heading p { font-size: 13px; }
+  .settings-section { padding: 19px 15px; border-radius: 16px; }
+  .settings-section-heading { align-items: flex-start; gap: 10px; }
+  .settings-section-heading h2 { font-size: 21px; }
+  .settings-section-heading p { font-size: 12px; }
+  .settings-choice-grid,
+  .theme-choice-grid { grid-template-columns: 1fr; gap: 9px; }
+  .settings-choice { min-height: 88px; padding: 13px 12px; }
+  .theme-choice { grid-template-columns: minmax(90px, 0.8fr) minmax(0, 1fr) auto; }
+  .theme-preview { height: 62px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-page,
+  .settings-selected-icon { animation: none; }
+  .settings-choice,
+  .theme-choice { transition: none; }
+}

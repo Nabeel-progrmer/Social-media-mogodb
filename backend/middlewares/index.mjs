@@ -1,1 +1,1 @@
-export {authGuardJWT} from "./jwt/index.mjs"
+export { authGuardJWT } from "./jwt/index.mjs";
