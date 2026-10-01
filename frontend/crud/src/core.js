@@ -1,4 +1,4 @@
-const productionApiUrl = "https://social-media-mogodb.vercel.app";
+const productionApiUrl = "https://social-media-mogodb-e33s.vercel.app";
 const localApiUrl = "http://localhost:5002";
 
 export const baseUrl = (
